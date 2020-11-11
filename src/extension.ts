@@ -25,11 +25,12 @@ function updateStatusBarItem(): void {
 	api.onDidChangeState(() => {
 		var repo = api.repositories[0];
 		var fetchUrl = repo.state.remotes[0]?.fetchUrl;
+		var branchName = repo.state.HEAD.name;
 
 		if (fetchUrl != null)
 		{
 			try {
-				var url = `https://www.codefactor.io/home/repoMeta?cloneUrl=${fetchUrl}`;
+				var url = `https://www.codefactor.io/home/repoMeta?cloneUrl=${fetchUrl}&branchName=${branchName}`;
 				axios.get(url).then((resp) => {
 					if (resp.status == 200)
 					{
