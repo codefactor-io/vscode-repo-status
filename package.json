@@ -2,7 +2,7 @@
 	"name": "repo-status",
 	"displayName": "Repository status",
 	"description": "Shows repository branch grade and issue count in the status bar.",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"publisher": "codefactor",
 	"repository": {
 		"type": "git",

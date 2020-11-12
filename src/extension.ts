@@ -62,13 +62,17 @@ function updateStatusBarItem(): void {
 						statusBarItem.show();
 						itemState = State.Found;
 					}
-					else 
+					else
 					{
 						statusBarItem.text = `$(megaphone) -`;
 						statusBarItem.show();
 						itemState = State.NotFound;
 					}
-				});
+				}).then(undefined, err => {
+					statusBarItem.text = `$(megaphone) -`;
+					statusBarItem.show();
+					itemState = State.NotFound;
+				 })
 			} catch (exception) {
 				statusBarItem.text = `$(megaphone) -`;
 				statusBarItem.show();
